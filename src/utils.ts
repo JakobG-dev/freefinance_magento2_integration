@@ -295,6 +295,8 @@ const updateCustomerIfChanges = async (
 
         const attribute1 = newCustomer.attribute1 !== oldCustomer.attribute1;
 
+        const attribute4 = newCustomer.attribute4 !== oldCustomer.attribute4;
+
         const attribute5 = newCustomer.attribute5 !== oldCustomer.attribute5;
 
         if (
@@ -310,7 +312,8 @@ const updateCustomerIfChanges = async (
             country ||
             region ||
             attribute1 ||
-            attribute5
+            attribute5 ||
+            attribute4
         ) {
             const config = {
                 headers: {
@@ -364,6 +367,7 @@ const compareAddresses = (order: MagentoOrder): string => {
         const lastname = shippingAddress.lastname !== billingAddress.lastname;
         const postcode = shippingAddress.postcode !== billingAddress.postcode;
         const street = shippingAddress.street[0] !== billingAddress.street[0];
+        const street2 = shippingAddress.street[1] !== billingAddress.street[1];
         const region = shippingAddress.region !== billingAddress.region;
         const regionCode =
             shippingAddress.region_code !== billingAddress.region_code;
@@ -377,7 +381,8 @@ const compareAddresses = (order: MagentoOrder): string => {
             postcode ||
             street ||
             region ||
-            regionCode
+            regionCode ||
+            street2
         ) {
             return '!Liefer- und Rechnungsadresse sind unterschiedlich!';
         } else {

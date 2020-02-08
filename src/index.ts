@@ -178,6 +178,7 @@ export const createInvoicePubSub = functions.pubsub
                 country: magentoOrder?.billing_address?.country_id,
                 region: regionCode,
                 attribute1: magentoOrder?.customer_group_id,
+                attribute4: magentoOrder?.billing_address?.street[1],
                 attribute5: magentoOrder?.billing_address?.region
             };
 
