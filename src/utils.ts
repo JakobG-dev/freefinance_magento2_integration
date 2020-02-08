@@ -345,7 +345,7 @@ const updateCustomerIfChanges = async (
             if (!updateCustomerResponse) {
                 throw Error('Could not update Customer');
             }
-            console.log('Customer Updated');
+            console.log('Customer Updated', newCustomer, oldCustomer);
         }
     } catch (e) {
         console.log(e);
