@@ -443,7 +443,19 @@ export const createInvoice = async (
     });
 
     const lines: InvoiceItem[] = filteredItems.map(
-        (item): InvoiceItem => {
+        (lineItem): InvoiceItem => {
+            const parentItem = lineItem?.parent_item;
+            type ItemType = typeof lineItem & typeof parentItem;
+
+            let item = lineItem as ItemType;
+
+            //Check if there is a parent item because of configurable product. Use parent if availabe
+            if (lineItem?.parent_item) {
+                item = parentItem as ItemType;
+                //Use name of original parent
+                item.name = lineItem?.name;
+            }
+
             const discount = roundToTwo(
                 Math.abs(item.discount_amount) / item.qty_ordered
             );

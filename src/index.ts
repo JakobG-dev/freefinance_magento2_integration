@@ -148,8 +148,8 @@ export const createInvoicePubSub = functions.pubsub
             );
 
             // If Region Provided in Magento Order, convert Magento Region Format to FreeFinance Region Format
-            let regionCode: string | undefined = undefined;
-            let regionError: string | undefined = undefined;
+            const regionCode: string | undefined = undefined;
+            const regionError: string | undefined = undefined;
             // if (magentoOrder?.billing_address?.region) {
             //     const regionCodeResponse = await getRegionCode(
             //         access_token,
@@ -220,7 +220,7 @@ const getMagentoOrder = async (entity_id: number, increment_id: string) => {
         local_entity_id = entity_id;
     } else if (increment_id) {
         const foundEntityID = await getOrderEntityIDbyIncrementID(increment_id);
-        if (typeof foundEntityID == 'number') {
+        if (typeof foundEntityID === 'number') {
             local_entity_id = foundEntityID;
         } else {
             throw Error('increment_id not found');
