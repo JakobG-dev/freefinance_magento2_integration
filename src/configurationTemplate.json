@@ -1,0 +1,10 @@
+{
+    "paymentMethods": {
+        "banktransfer": "beeab17d-9b24-49f7-864e-b53f75704d05",
+        "paypal_express": "bdf1a142-23ff-44c0-beec-fd098e30d28e",
+        "braintree": "119932ba-301a-4bce-99d4-5dcc11180810",
+        "sofortueberweisung": "1c4f3b76-7777-4d03-9938-47c9f1ca9d30",
+        "internalpayment": "7856e8d9-8489-4721-87e4-58fa1c55f57c"
+    },
+    "fallbackPaymentMethod": "beeab17d-9b24-49f7-864e-b53f75704d05"
+}
