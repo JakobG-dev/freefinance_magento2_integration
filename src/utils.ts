@@ -416,6 +416,9 @@ const shippingAdressString = (shippingAddress: any): string => {
     if (street[0]) {
         addressString += street[0] + '\n';
     }
+    if (street[1]) {
+        addressString += street[1] + '\n';
+    }
     if (postcode || city) {
         addressString += `${postcode || ''} ${city || ''}` + '\n';
     }
