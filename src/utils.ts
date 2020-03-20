@@ -507,8 +507,9 @@ export const createInvoice = async (
 
     // Add Shipping Cost Line
     lines.push({
-        itemNumber: 'Versandkosten',
-        name: magentoOrder.shipping_description,
+        // itemNumber: 'Versandkosten',
+        // name: magentoOrder.shipping_description,
+        name: 'Versandkosten',
         amount: 1,
         account: '4000',
         taxClassEntry: `000`,
